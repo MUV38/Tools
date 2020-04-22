@@ -6,10 +6,10 @@
 #include <d3d12.h>
 #include <d3d12shader.h>
 
-#include "MyDxcApi.h"
+#include "dxc/MyDxcApi.h"
 
 namespace shader {
-namespace uti {
+namespace util {
 
 //! @brief シェーダーコンパイル
 HRESULT compileShaderFromFile(Microsoft::WRL::ComPtr<IDxcBlob>& blob, const wchar_t* filePath);

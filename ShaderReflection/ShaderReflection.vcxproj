@@ -85,13 +85,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="include\FileSystem.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="source\ShaderReflectionContainer.cpp" />
-    <ClCompile Include="source\ShaderUtil.cpp" />
-    <ClCompile Include="source\StrUtil.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <FxCompile Include="shaders\sample\test_cs.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Compute</ShaderType>
       <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">4.0</ShaderModel>
@@ -117,13 +110,20 @@
     <None Include="shaders\sample\include\Scene.hlsli" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\AssertUtil.h" />
-    <ClInclude Include="include\FileSystem.h" />
-    <ClInclude Include="include\MyDxcApi.h" />
-    <ClInclude Include="include\MyWindows.h" />
-    <ClInclude Include="include\ShaderReflectionContainer.h" />
-    <ClInclude Include="include\ShaderUtil.h" />
-    <ClInclude Include="include\StrUtil.h" />
+    <ClInclude Include="include\dxc\MyDxcApi.h" />
+    <ClInclude Include="include\filesystem\FileSystem.h" />
+    <ClInclude Include="include\shader\reflection\ShaderReflectionContainer.h" />
+    <ClInclude Include="include\shader\util\ShaderUtil.h" />
+    <ClInclude Include="include\util\AssertUtil.h" />
+    <ClInclude Include="include\util\StrUtil.h" />
+    <ClInclude Include="include\windows\MyWindows.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\filesystem\FileSystem.cpp" />
+    <ClCompile Include="source\main.cpp" />
+    <ClCompile Include="source\shader\reflection\ShaderReflectionContainer.cpp" />
+    <ClCompile Include="source\shader\util\ShaderUtil.cpp" />
+    <ClCompile Include="source\util\StrUtil.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

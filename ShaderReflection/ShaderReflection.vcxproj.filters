@@ -1,19 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="source\StrUtil.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="source\ShaderUtil.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="source\ShaderReflectionContainer.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="include\FileSystem.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <Filter Include="shaders">
       <UniqueIdentifier>{716fc9da-be42-4673-ae94-013e64a8e16e}</UniqueIdentifier>
     </Filter>
@@ -28,6 +15,42 @@
     </Filter>
     <Filter Include="include">
       <UniqueIdentifier>{ac197fdd-2c8d-4be4-a138-0dc852699342}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\util">
+      <UniqueIdentifier>{22dbbeb1-15a1-432e-b46a-76e4a4b1c929}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\shader">
+      <UniqueIdentifier>{5288e467-a7ff-4c2e-bb9c-30a9fe08df4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\shader\reflection">
+      <UniqueIdentifier>{542d939f-614d-4acd-a023-f159e35ab810}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\shader\util">
+      <UniqueIdentifier>{2b5dcf90-15b3-49b2-995b-081a6f46e2fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\dxc">
+      <UniqueIdentifier>{50730f4f-7cad-4fb0-b436-7dbcae9197b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\filesystem">
+      <UniqueIdentifier>{25308808-4d88-42c0-9c1e-905c64bc3669}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\windows">
+      <UniqueIdentifier>{b76c7749-53fe-4d78-98e5-a61b4bac8705}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\filesystem">
+      <UniqueIdentifier>{2011f288-6e41-49fc-ae04-b922e34ded5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\shader">
+      <UniqueIdentifier>{b48683d0-5077-4126-a95f-ba29bf64de0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\shader\reflection">
+      <UniqueIdentifier>{17edb51a-d18e-4bd5-b468-53a3784ba277}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\shader\util">
+      <UniqueIdentifier>{111a7f5e-044b-43a0-a0fa-b172c1426d72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\util">
+      <UniqueIdentifier>{0e804cad-29df-47b4-a52d-c543b08e18b5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -59,26 +82,43 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\StrUtil.h">
-      <Filter>include</Filter>
+    <ClInclude Include="include\util\AssertUtil.h">
+      <Filter>include\util</Filter>
     </ClInclude>
-    <ClInclude Include="include\ShaderUtil.h">
-      <Filter>include</Filter>
+    <ClInclude Include="include\util\StrUtil.h">
+      <Filter>include\util</Filter>
     </ClInclude>
-    <ClInclude Include="include\AssertUtil.h">
-      <Filter>include</Filter>
+    <ClInclude Include="include\shader\util\ShaderUtil.h">
+      <Filter>include\shader\util</Filter>
     </ClInclude>
-    <ClInclude Include="include\ShaderReflectionContainer.h">
-      <Filter>include</Filter>
+    <ClInclude Include="include\shader\reflection\ShaderReflectionContainer.h">
+      <Filter>include\shader\reflection</Filter>
     </ClInclude>
-    <ClInclude Include="include\FileSystem.h">
-      <Filter>include</Filter>
+    <ClInclude Include="include\dxc\MyDxcApi.h">
+      <Filter>include\dxc</Filter>
     </ClInclude>
-    <ClInclude Include="include\MyWindows.h">
-      <Filter>include</Filter>
+    <ClInclude Include="include\filesystem\FileSystem.h">
+      <Filter>include\filesystem</Filter>
     </ClInclude>
-    <ClInclude Include="include\MyDxcApi.h">
-      <Filter>include</Filter>
+    <ClInclude Include="include\windows\MyWindows.h">
+      <Filter>include\windows</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\filesystem\FileSystem.cpp">
+      <Filter>source\filesystem</Filter>
+    </ClCompile>
+    <ClCompile Include="source\shader\util\ShaderUtil.cpp">
+      <Filter>source\shader\util</Filter>
+    </ClCompile>
+    <ClCompile Include="source\shader\reflection\ShaderReflectionContainer.cpp">
+      <Filter>source\shader\reflection</Filter>
+    </ClCompile>
+    <ClCompile Include="source\util\StrUtil.cpp">
+      <Filter>source\util</Filter>
+    </ClCompile>
+    <ClCompile Include="source\main.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -10,7 +10,7 @@
 
 #include <picojson/picojson.h>
 
-#include "MyDxcApi.h"
+#include "dxc/MyDxcApi.h"
 
 namespace shader {
 namespace reflection {

@@ -1,12 +1,12 @@
-#include "ShaderUtil.h"
+#include "shader/util/ShaderUtil.h"
 
 #include <iostream>
 #include <fstream>
 
-#include "FileSystem.h"
+#include "filesystem/FileSystem.h"
 
 namespace shader {
-namespace uti {
+namespace util {
 
 //! @brief シェーダーコンパイル
 HRESULT compileShaderFromFile(Microsoft::WRL::ComPtr<IDxcBlob>& blob, const wchar_t* filePath)
@@ -18,7 +18,7 @@ HRESULT compileShaderFromFile(Microsoft::WRL::ComPtr<IDxcBlob>& blob, const wcha
 	auto filename = path.filename();
 	filename.replace_extension("");
 
-	const wchar_t* profile = shader::uti::getTargetProfileByFilename(filename.c_str());
+	const wchar_t* profile = shader::util::getTargetProfileByFilename(filename.c_str());
 
 	std::ifstream infile(path);
 	if (!infile)

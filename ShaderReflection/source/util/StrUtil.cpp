@@ -1,6 +1,6 @@
-#include "StrUtil.h"
+#include "util/StrUtil.h"
 
-#include "MyWindows.h"
+#include "windows/MyWindows.h"
 
 // string to wstring
 std::wstring util::ToWstring(const std::string& str)
