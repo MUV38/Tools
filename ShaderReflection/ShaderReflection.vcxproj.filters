@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="source\StrUtil.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ShaderUtil.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ShaderReflectionContainer.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="include\FileSystem.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="shaders">
+      <UniqueIdentifier>{716fc9da-be42-4673-ae94-013e64a8e16e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shaders\sample">
+      <UniqueIdentifier>{1360dbc3-d69b-4a11-8b09-25785983f5bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shaders\sample\include">
+      <UniqueIdentifier>{28437e62-d9ee-4e29-87c3-0c7426c4617e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source">
+      <UniqueIdentifier>{2e291a62-2269-4507-9cec-9dd5d08d7143}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{ac197fdd-2c8d-4be4-a138-0dc852699342}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="shaders\sample\test_ps.hlsl">
+      <Filter>shaders\sample</Filter>
+    </FxCompile>
+    <FxCompile Include="shaders\sample\test_vs.hlsl">
+      <Filter>shaders\sample</Filter>
+    </FxCompile>
+    <FxCompile Include="shaders\sample\test_cs.hlsl">
+      <Filter>shaders\sample</Filter>
+    </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\sample\include\Common.hlsli">
+      <Filter>shaders\sample\include</Filter>
+    </None>
+    <None Include="shaders\sample\include\ConstantBufferDefine.hlsli">
+      <Filter>shaders\sample\include</Filter>
+    </None>
+    <None Include="shaders\sample\include\Global.hlsli">
+      <Filter>shaders\sample\include</Filter>
+    </None>
+    <None Include="shaders\sample\include\Model.hlsli">
+      <Filter>shaders\sample\include</Filter>
+    </None>
+    <None Include="shaders\sample\include\Scene.hlsli">
+      <Filter>shaders\sample\include</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\StrUtil.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ShaderUtil.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AssertUtil.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ShaderReflectionContainer.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FileSystem.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MyWindows.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MyDxcApi.h">
+      <Filter>include</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
