@@ -7,3 +7,6 @@
 /Common/cpp/Core/.vs
 /Common/cpp/Core/x64
 /Common/cpp/Core/Core.vcxproj.user
+/ModelConverter/.vs
+/ModelConverter/x64
+/ModelConverter/ModelConverter.vcxproj.user
