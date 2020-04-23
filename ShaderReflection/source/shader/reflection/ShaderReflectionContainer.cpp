@@ -1,6 +1,6 @@
 #include "shader/reflection/ShaderReflectionContainer.h"
 
-#include "filesystem/FileSystem.h"
+#include "core/core.h"
 
 namespace shader {
 namespace reflection {

@@ -10,12 +10,9 @@
 #include <fstream>
 #include <vector>
 
-#include "windows/MyWindows.h"
+#include "core/core.h"
 #include "shader/reflection/ShaderReflectionContainer.h"
 #include "shader/util/ShaderUtil.h"
-#include "util/StrUtil.h"
-#include "util/AssertUtil.h"
-#include "filesystem/FileSystem.h"
 
 using namespace std::experimental;
 
