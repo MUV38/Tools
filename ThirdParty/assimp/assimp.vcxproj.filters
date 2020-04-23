@@ -17,6 +17,9 @@
     <ClInclude Include="pch.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="include\assimp\assimp.h">
+      <Filter>include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">

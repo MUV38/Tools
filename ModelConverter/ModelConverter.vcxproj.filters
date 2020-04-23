@@ -7,10 +7,36 @@
     <Filter Include="source">
       <UniqueIdentifier>{f8b5c046-302f-4f14-b96f-fa4a47f09715}</UniqueIdentifier>
     </Filter>
+    <Filter Include="include\model">
+      <UniqueIdentifier>{a51bb781-3a50-41b1-9174-47cdcc3761c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\model">
+      <UniqueIdentifier>{37a78266-9814-47c3-b90e-aef3203f9ffd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\main.cpp">
       <Filter>source</Filter>
     </ClCompile>
+    <ClCompile Include="source\model\material.cpp">
+      <Filter>source\model</Filter>
+    </ClCompile>
+    <ClCompile Include="source\model\mesh.cpp">
+      <Filter>source\model</Filter>
+    </ClCompile>
+    <ClCompile Include="source\model\modelLoaderRaw.cpp">
+      <Filter>source\model</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\model\material.h">
+      <Filter>include\model</Filter>
+    </ClInclude>
+    <ClInclude Include="include\model\mesh.h">
+      <Filter>include\model</Filter>
+    </ClInclude>
+    <ClInclude Include="include\model\modelLoaderRaw.h">
+      <Filter>include\model</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

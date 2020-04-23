@@ -91,6 +91,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="framework.h" />
+    <ClInclude Include="include\assimp\assimp.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>

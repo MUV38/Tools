@@ -54,7 +54,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\Common\cpp\Core\include;..\ThirdParty\assimp\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>include;..\Common\cpp\Core\include;..\ThirdParty\assimp\include;..\ThirdParty\picojson\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -70,7 +70,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\Common\cpp\Core\include;..\ThirdParty\assimp\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>include;..\Common\cpp\Core\include;..\ThirdParty\assimp\include;..\ThirdParty\picojson\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -82,6 +82,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="source\main.cpp" />
+    <ClCompile Include="source\model\material.cpp" />
+    <ClCompile Include="source\model\mesh.cpp" />
+    <ClCompile Include="source\model\modelLoaderRaw.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\model\material.h" />
+    <ClInclude Include="include\model\mesh.h" />
+    <ClInclude Include="include\model\modelLoaderRaw.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
