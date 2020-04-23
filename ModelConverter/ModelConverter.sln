@@ -4,8 +4,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ModelConverter", "ModelConverter.vcxproj", "{7A690416-C591-4A70-817F-2942D47E82FA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8E20A45A-3EE7-4662-854B-FC05ECD7A9AD} = {8E20A45A-3EE7-4662-854B-FC05ECD7A9AD}
+		{23E624BD-1172-43EB-BC6C-60107B33C3B7} = {23E624BD-1172-43EB-BC6C-60107B33C3B7}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Core", "..\Common\cpp\Core\Core.vcxproj", "{8E20A45A-3EE7-4662-854B-FC05ECD7A9AD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "assimp", "..\ThirdParty\assimp\assimp.vcxproj", "{23E624BD-1172-43EB-BC6C-60107B33C3B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +27,10 @@ Global
 		{8E20A45A-3EE7-4662-854B-FC05ECD7A9AD}.Debug|x64.Build.0 = Debug|x64
 		{8E20A45A-3EE7-4662-854B-FC05ECD7A9AD}.Release|x64.ActiveCfg = Release|x64
 		{8E20A45A-3EE7-4662-854B-FC05ECD7A9AD}.Release|x64.Build.0 = Release|x64
+		{23E624BD-1172-43EB-BC6C-60107B33C3B7}.Debug|x64.ActiveCfg = Debug|x64
+		{23E624BD-1172-43EB-BC6C-60107B33C3B7}.Debug|x64.Build.0 = Debug|x64
+		{23E624BD-1172-43EB-BC6C-60107B33C3B7}.Release|x64.ActiveCfg = Release|x64
+		{23E624BD-1172-43EB-BC6C-60107B33C3B7}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
