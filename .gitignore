@@ -10,3 +10,6 @@
 /ModelConverter/.vs
 /ModelConverter/x64
 /ModelConverter/ModelConverter.vcxproj.user
+/ThirdParty/assimp/.vs
+/ThirdParty/assimp/x64
+/ThirdParty/assimp/assimp.vcxproj.user
