@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="source\filesystem">
+      <UniqueIdentifier>{b49f5155-fa77-4cfe-8af1-1548cb876cc5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\string">
+      <UniqueIdentifier>{97c0dcab-5f1a-4fda-806c-4c2898b78723}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\assert">
+      <UniqueIdentifier>{d3455003-e519-4ea5-8f7e-a5b995d2a1a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\filesystem">
+      <UniqueIdentifier>{518fe96d-7452-466c-9081-0ad28ca0f849}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\string">
+      <UniqueIdentifier>{3b2220f1-06c0-4006-9300-d55ee3183d34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\windows">
+      <UniqueIdentifier>{8e5dff81-d1c4-45cf-9895-67e608a77031}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\core\assert\assertUtil.h">
+      <Filter>include\assert</Filter>
+    </ClInclude>
+    <ClInclude Include="include\core\filesystem\myFilesystem.h">
+      <Filter>include\filesystem</Filter>
+    </ClInclude>
+    <ClInclude Include="include\core\windows\myWindows.h">
+      <Filter>include\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="include\core\string\stringUtil.h">
+      <Filter>include\string</Filter>
+    </ClInclude>
+    <ClInclude Include="include\core\core.h">
+      <Filter>include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\filesystem\myFilesystem.cpp">
+      <Filter>source\filesystem</Filter>
+    </ClCompile>
+    <ClCompile Include="source\string\stringUtil.cpp">
+      <Filter>source\string</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

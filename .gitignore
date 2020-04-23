@@ -4,3 +4,6 @@
 /ShaderReflection/DvlErrLog.txt
 /ShaderReflection/ShaderReflection.vcxproj.user
 /ShaderReflection/shader_reflection.json
+/Common/cpp/Core/.vs
+/Common/cpp/Core/x64
+/Common/cpp/Core/Core.vcxproj.user
