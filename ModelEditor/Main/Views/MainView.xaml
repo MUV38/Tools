@@ -5,8 +5,80 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ModelEditor.Main.Views"
         mc:Ignorable="d"
-        Title="MainView" Height="450" Width="800">
-    <Grid>
+        Title="ModelEditor" 
+        Width="800"
+        SizeToContent="Height">
+
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="ファイル(_F)">
+                <MenuItem Header="開く(_O)"/>
+                <MenuItem Header="インポート"/>
+            </MenuItem>
+            <MenuItem Header="設定(_S)">
+                <MenuItem Header="シェーダーリフレクション"/>
+            </MenuItem>
+            <MenuItem Header="ヘルプ(_H)"/>
+        </Menu>
+
+        <StackPanel DockPanel.Dock="Top">
+            <Grid Height="400">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200" MinWidth="50"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*" MinWidth="50"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="200" MinWidth="50"/>
+                </Grid.ColumnDefinitions>
+
+                <TabControl Grid.Row="0" Grid.Column="0">
+                    <TabItem Header="Mesh">
+                        <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible">
+                            <StackPanel>
+                                <TextBlock Text="test"/>
+                            </StackPanel>
+                        </ScrollViewer>
+                    </TabItem>
+                    <TabItem Header="Material">
+                        <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible">
+                            <StackPanel>
+                                <TextBlock Text="test"/>
+                            </StackPanel>
+                        </ScrollViewer>
+                    </TabItem>
+                </TabControl>
+                
+                <GridSplitter Grid.Row="0" Grid.Column="1" Width="5" HorizontalAlignment="Stretch"/>
+
+                <Grid Grid.Row="0" Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="300" MinHeight="50"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*" MinHeight="50"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="test1"/>
+                    <GridSplitter Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Height="5" HorizontalAlignment="Stretch"/>
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="test2"/>
+
+                </Grid>
+
+                <GridSplitter Grid.Row="0" Grid.Column="3" Width="5" HorizontalAlignment="Stretch"/>
+
+                <ScrollViewer Grid.Row="0" Grid.Column="4" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible">
+                    <ListView>
+                    </ListView>
+                </ScrollViewer>
+
+
+            </Grid>
+        </StackPanel>
         
-    </Grid>
+        <StatusBar DockPanel.Dock="Top">
+            <StatusBarItem Content="準備完了"/>
+        </StatusBar>
+    </DockPanel>
 </Window>
