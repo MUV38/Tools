@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using ModelEditor.ViewModel;
 using ModelEditor.Command;
+using ModelEditor.Model3d;
 
 namespace ModelEditor.Main.ViewModels
 {
@@ -70,7 +71,14 @@ namespace ModelEditor.Main.ViewModels
         {
             ImportFileDialogCallback = null;
             System.Diagnostics.Debug.WriteLine("result:{0} filename:{1}", result, filename);
+
+            if (result)
+            {
+                _model.Import(filename);
+            }
         }
         #endregion
+
+        private Model3d.Model3d _model = new Model3d.Model3d();
     }
 }

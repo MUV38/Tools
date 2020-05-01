@@ -103,6 +103,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Dialog\OpenFile\OpenFileDialogBehavior.cs" />
+    <Compile Include="Model3d\Model3dData.cs" />
     <Compile Include="Model3d\Model3d.cs" />
     <Compile Include="Model3d\Model3dViewModel.cs" />
     <Compile Include="ViewModel\PropertyObject.cs" />
