@@ -3,6 +3,7 @@
 #include <vector>
 
 #include <DirectXMath.h>
+#include <string>
 
 /// メッシュ
 class Mesh
@@ -25,6 +26,10 @@ public:
     Mesh();
     ~Mesh();
 
+    //! @brief 名前
+    const std::string& getName() const;
+    void setName(const std::string& name);
+
     //! @brief 頂点数
     uint32_t getNumVertex() const;
 
@@ -44,6 +49,7 @@ public:
     void setMaterialIndex(uint32_t index);
 
 private:
+    std::string mName;
     std::vector<Vertex> mVertices;
     std::vector<Index> mIndices;
     uint32_t mMaterialIndex;

@@ -1,7 +1,8 @@
 #include "model/mesh.h"
 
 Mesh::Mesh()
-    : mVertices()
+    : mName("")
+    , mVertices()
     , mIndices()
     , mMaterialIndex(0)
 {
@@ -10,6 +11,16 @@ Mesh::Mesh()
 Mesh::~Mesh()
 {
 
+}
+
+const std::string& Mesh::getName() const
+{
+    return mName;
+}
+
+void Mesh::setName(const std::string& name)
+{
+    mName = name;
 }
 
 // í∏ì_êî

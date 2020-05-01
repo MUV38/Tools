@@ -128,8 +128,10 @@ bool ModelLoaderRaw::exportToJson(const wchar_t* outputPath)
             }
 
             picojson::object meshObj;
+            meshObj["Name"] = picojson::value(mesh->getName().c_str());
             meshObj["NumVertex"] = picojson::value(static_cast<double>(mesh->getNumVertex()));
             meshObj["NumIndex"] = picojson::value(static_cast<double>(mesh->getNumIndex()));
+            meshObj["MaterialIndex"] = picojson::value(static_cast<double>(mesh->getMaterialIndex()));
             meshObj["Vertex"] = picojson::value(vertexArray);
             meshObj["Index"] = picojson::value(indexArray);
 
@@ -233,9 +235,11 @@ ModelLoaderRaw::MeshPtr ModelLoaderRaw::processMesh(aiMesh* mesh, const aiScene*
         }
     }
     
+    const char* name = mesh->mName.C_Str();
     uint32_t materialIndex = mesh->mMaterialIndex;
 
     MeshPtr outMesh(new Mesh());
+    outMesh->setName(name);
     outMesh->setVertices(vertices);
     outMesh->setIndices(indices);
     outMesh->setMaterialIndex(materialIndex);
