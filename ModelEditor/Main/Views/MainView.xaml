@@ -7,19 +7,30 @@
         xmlns:of ="clr-namespace:ModelEditor.Dialog.OpenFile"
         mc:Ignorable="d"
         Title="ModelEditor" 
-        Width="800"
-        SizeToContent="Height">
+        Width="1280"
+        Height="720"
+        >
 
     <Window.InputBindings>
         <KeyBinding Modifiers="Control" Key="O" Command="{Binding OpenFileDialog}"/>
         <KeyBinding Modifiers="Control" Key="I" Command="{Binding ImportFileDialog}"/>
     </Window.InputBindings>
-
+    
     <DockPanel>
-        <!--メニュー-->
-        <Menu DockPanel.Dock="Top">
-            <MenuItem Header="ファイル(_F)" Command="{Binding OpenFileDialog}">
-                <MenuItem Header="開く(_O)"
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" MinHeight="20"/>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="1*" MinHeight="20"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--メニュー-->
+            <Menu Grid.Row="0" Grid.Column="0" DockPanel.Dock="Top">
+                <MenuItem Header="ファイル(_F)" Command="{Binding OpenFileDialog}">
+                    <MenuItem Header="開く(_O)"
                           InputGestureText="Ctrl+O"
                           Command="{Binding OpenFileDialog}"
                           of:OpenFileDialogBehavior.Title="ファイルを開く"
@@ -27,36 +38,37 @@
                           of:OpenFileDialogBehavior.Multiselect="False"
                           of:OpenFileDialogBehavior.Callback="{Binding OpenFileDialogCallback}"
                           />
-                <MenuItem Header="インポート"
+                    <MenuItem Header="インポート"
                           Command="{Binding ImportFileDialog}"
                           of:OpenFileDialogBehavior.Title="ファイルをインポート"
                           of:OpenFileDialogBehavior.Filter="モデルファイル(*.json)|*.json"
                           of:OpenFileDialogBehavior.Multiselect="False"
                           of:OpenFileDialogBehavior.Callback="{Binding ImportFileDialogCallback}"
                           />
-            </MenuItem>
-            <MenuItem Header="設定(_S)">
-                <MenuItem Header="シェーダーリフレクション"
+                </MenuItem>
+                <MenuItem Header="設定(_S)">
+                    <MenuItem Header="シェーダーリフレクション"
                           />
-            </MenuItem>
-            <MenuItem Header="ヘルプ(_H)"/>
-        </Menu>
-        
-        <!--ウィンドウ-->
-        <StackPanel DockPanel.Dock="Top">
-            <Grid Height="400">
+                </MenuItem>
+                <MenuItem Header="ヘルプ(_H)"/>
+            </Menu>
+
+            <!--ウィンドウ-->
+            <Grid Grid.Row="1" Grid.Column="0" DockPanel.Dock="Top">
                 <Grid.RowDefinitions>
-                    <RowDefinition/>
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="200" MinWidth="50"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*" MinWidth="50"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="200" MinWidth="50"/>
+                    <ColumnDefinition Width="50*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="100*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="50*"/>
                 </Grid.ColumnDefinitions>
-                
+
+                <!--左ウィンドウ-->
                 <TabControl Grid.Row="0" Grid.Column="0">
+                    <!--Mesh-->
                     <TabItem Header="Mesh">
                         <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible">
                             <StackPanel>
@@ -64,6 +76,7 @@
                             </StackPanel>
                         </ScrollViewer>
                     </TabItem>
+                    <!--Material-->
                     <TabItem Header="Material">
                         <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible">
                             <StackPanel>
@@ -72,33 +85,61 @@
                         </ScrollViewer>
                     </TabItem>
                 </TabControl>
-                
-                <GridSplitter Grid.Row="0" Grid.Column="1" Width="5" HorizontalAlignment="Stretch"/>
+
+                <GridSplitter Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch"/>
 
                 <Grid Grid.Row="0" Grid.Column="2">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="300" MinHeight="50"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="*" MinHeight="50"/>
+                        <RowDefinition Height="100*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="50*"/>
                     </Grid.RowDefinitions>
 
+                    <!--中央上ウィンドウ-->
                     <TextBlock Grid.Row="0" Grid.Column="0" Text="test1"/>
-                    <GridSplitter Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Height="5" HorizontalAlignment="Stretch"/>
-                    <TextBlock Grid.Row="2" Grid.Column="0" Text="test2"/>
 
+                    <GridSplitter Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"/>
+
+                    <!--中央下ウィンドウ-->
+                    <TabControl Grid.Row="2" Grid.Column="0">
+                        <!--Log-->
+                        <TabItem Header="Log">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="3*"/>
+                                    <RowDefinition Height="1*"/>
+                                    <RowDefinition Height="20*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <ComboBox Grid.Row="0" Grid.Column="3"/>
+                                <Separator Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" MinHeight="5"/>
+                                <ScrollViewer Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible">
+                                    <TextBlock Text="test"/>
+                                </ScrollViewer>
+                            </Grid>
+                        </TabItem>
+                    </TabControl>
                 </Grid>
 
                 <GridSplitter Grid.Row="0" Grid.Column="3" Width="5" HorizontalAlignment="Stretch"/>
 
+                <!--右ウィンドウ-->
                 <ScrollViewer Grid.Row="0" Grid.Column="4" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible">
                     <ListView>
                     </ListView>
                 </ScrollViewer>
             </Grid>
-        </StackPanel>
-        
-        <StatusBar DockPanel.Dock="Top">
-            <StatusBarItem Content="準備完了"/>
-        </StatusBar>
+
+            <!--ステータスバー-->
+            <StatusBar Grid.Row="2" Grid.Column="0" DockPanel.Dock="Top">
+                <StatusBarItem Content="準備完了"/>
+            </StatusBar>
+
+        </Grid>
     </DockPanel>
 </Window>

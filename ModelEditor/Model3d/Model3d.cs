@@ -28,14 +28,28 @@ namespace ModelEditor.Model3d
             {
                 using (var streamReader = new StreamReader(fileName))
                 {
+                    // 全文字列読み取り
                     string json = streamReader.ReadToEnd();
-                    // _modelData = JsonSerializer.Deserialize<Model3dData>(json);
+                    if (json == "")
+                    {
+                        throw new Exception("Failed Read json.");
+                    }
+
+                    // json全体のパース
                     var document = System.Text.Json.JsonDocument.Parse(json);
+                    if (document == null)
+                    {
+                        throw new Exception("Failed parse json.");
+                    }
 
+                    // モデルデータ構築
                     _modelData = new Model3dData();
-                    _modelData.ParseJsonElement(document.RootElement);
-
-                    System.Diagnostics.Debug.WriteLine("test");
+                    bool result = _modelData.ParseJsonElement(document.RootElement);
+                    if (!result)
+                    {
+                        _modelData = null;
+                        throw new Exception("Failed parse json element.");
+                    }
                 }
             }
             catch (Exception e)
