@@ -11,6 +11,13 @@ namespace ModelEditor.Model3d
 {
     class Model3d
     {
+        #region プロパティ
+        public Model3dData Data
+        {
+            get { return _modelData; }
+        }
+        #endregion
+
         /// <summary>
         /// インポート
         /// </summary>

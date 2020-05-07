@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using ModelEditor.ViewModel;
 using ModelEditor.Command;
 using ModelEditor.Model3d;
+using System.Collections.ObjectModel;
 
 namespace ModelEditor.Main.ViewModels
 {
@@ -74,11 +75,17 @@ namespace ModelEditor.Main.ViewModels
 
             if (result)
             {
-                _model.Import(filename);
+                _modelVm.Import(filename);
             }
         }
         #endregion
 
-        private Model3d.Model3d _model = new Model3d.Model3d();
+        #region モデル
+        private Model3dViewModel _modelVm = new Model3dViewModel();
+        public Model3dViewModel Model3dViewModel
+        {
+            get { return _modelVm; }
+        }
+        #endregion
     }
 }

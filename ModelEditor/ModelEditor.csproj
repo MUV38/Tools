@@ -103,6 +103,15 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Dialog\OpenFile\OpenFileDialogBehavior.cs" />
+    <Compile Include="Main\Controls\InfoViewControl.xaml.cs">
+      <DependentUpon>InfoViewControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Controls\ModelViewControl.xaml.cs">
+      <DependentUpon>ModelViewControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Controls\PropertyViewControl.xaml.cs">
+      <DependentUpon>PropertyViewControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Model3d\Model3dData.cs" />
     <Compile Include="Model3d\Model3d.cs" />
     <Compile Include="Model3d\Model3dViewModel.cs" />
@@ -141,6 +150,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Main\Controls\InfoViewControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Main\Controls\ModelViewControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Main\Controls\PropertyViewControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Main\Views\MainView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

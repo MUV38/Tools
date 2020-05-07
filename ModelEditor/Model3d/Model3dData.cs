@@ -6,29 +6,30 @@ using System.Threading.Tasks;
 
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Collections.ObjectModel;
 
 namespace ModelEditor.Model3d
 {
     public class VertexData
     {
         [JsonPropertyName("Position")]
-        public List<double> Position { get; set; }
+        public ObservableCollection<double> Position { get; set; }
         [JsonPropertyName("Normal")]
-        public List<double> Normal { get; set; }
+        public ObservableCollection<double> Normal { get; set; }
         [JsonPropertyName("Tangent")]
-        public List<double> Tangent { get; set; }
+        public ObservableCollection<double> Tangent { get; set; }
         [JsonPropertyName("Binormal")]
-        public List<double> Binormal { get; set; }
+        public ObservableCollection<double> Binormal { get; set; }
         [JsonPropertyName("UV")]
-        public List<double> UV { get; set; }
+        public ObservableCollection<double> UV { get; set; }
 
         public VertexData()
         {
-            Position = new List<double>();
-            Normal = new List<double>();
-            Tangent = new List<double>();
-            Binormal = new List<double>();
-            UV = new List<double>();
+            Position = new ObservableCollection<double>();
+            Normal = new ObservableCollection<double>();
+            Tangent = new ObservableCollection<double>();
+            Binormal = new ObservableCollection<double>();
+            UV = new ObservableCollection<double>();
         }
 
         public bool ParseJsonElement(JsonElement element)
@@ -37,7 +38,7 @@ namespace ModelEditor.Model3d
             JsonElement posElem;
             if (element.TryGetProperty("Position", out posElem))
             {
-                List<double> vec = new List<double>();
+                ObservableCollection<double> vec = new ObservableCollection<double>();
                 ParseVectorElement(ref vec, posElem, 3);
                 Position = vec;
             }
@@ -45,7 +46,7 @@ namespace ModelEditor.Model3d
             JsonElement normalElem;
             if (element.TryGetProperty("Normal", out normalElem))
             {
-                List<double> vec = new List<double>();
+                ObservableCollection<double> vec = new ObservableCollection<double>();
                 ParseVectorElement(ref vec, normalElem, 3);
                 Normal = vec;
             }
@@ -53,7 +54,7 @@ namespace ModelEditor.Model3d
             JsonElement tangentElem;
             if (element.TryGetProperty("Tangent", out tangentElem))
             {
-                List<double> vec = new List<double>();
+                ObservableCollection<double> vec = new ObservableCollection<double>();
                 ParseVectorElement(ref vec, tangentElem, 3);
                 Tangent = vec;
             }
@@ -61,7 +62,7 @@ namespace ModelEditor.Model3d
             JsonElement binormalElem;
             if (element.TryGetProperty("Binormal", out binormalElem))
             {
-                List<double> vec = new List<double>();
+                ObservableCollection<double> vec = new ObservableCollection<double>();
                 ParseVectorElement(ref vec, binormalElem, 3);
                 Binormal = vec;
             }
@@ -69,7 +70,7 @@ namespace ModelEditor.Model3d
             JsonElement uvElem;
             if (element.TryGetProperty("UV", out uvElem))
             {
-                List<double> vec = new List<double>();
+                ObservableCollection<double> vec = new ObservableCollection<double>();
                 ParseVectorElement(ref vec, uvElem, 2);
                 UV = vec;
             }
@@ -77,7 +78,7 @@ namespace ModelEditor.Model3d
             return true;
         }
 
-        private bool ParseVectorElement(ref List<double> vector, JsonElement element, int elementCount)
+        private bool ParseVectorElement(ref ObservableCollection<double> vector, JsonElement element, int elementCount)
         {
             if (element.ValueKind == JsonValueKind.Array && element.GetArrayLength() == elementCount)
             {
@@ -105,14 +106,14 @@ namespace ModelEditor.Model3d
         [JsonPropertyName("MaterialIndex")]
         public uint MaterialIndex { get; set; }
         [JsonPropertyName("Vertex")]
-        public List<VertexData> Vertices { get; set; }
+        public ObservableCollection<VertexData> Vertices { get; set; }
         [JsonPropertyName("Index")]
-        public List<uint> Indices { get; set; }
+        public ObservableCollection<uint> Indices { get; set; }
 
         public MeshData()
         {
-            Vertices = new List<VertexData>();
-            Indices = new List<uint>();
+            Vertices = new ObservableCollection<VertexData>();
+            Indices = new ObservableCollection<uint>();
         }
 
         public bool ParseJsonElement(JsonElement element)
@@ -193,11 +194,11 @@ namespace ModelEditor.Model3d
         [JsonPropertyName("NumMeshIndex")]
         public uint NumMeshIndex { get; set; }
         [JsonPropertyName("MeshIndex")]
-        public List<uint> MeshIndices { get; set; }
+        public ObservableCollection<uint> MeshIndices { get; set; }
 
         public MaterialData()
         {
-            MeshIndices = new List<uint>();
+            MeshIndices = new ObservableCollection<uint>();
         }
 
         public bool ParseJsonElement(JsonElement element)
@@ -247,14 +248,14 @@ namespace ModelEditor.Model3d
         [JsonPropertyName("NumMaterial")]
         public uint NumMaterial { get; set; }
         [JsonPropertyName("Mesh")]
-        public List<MeshData> Meshes { get; set; }
+        public ObservableCollection<MeshData> Meshes { get; set; }
         [JsonPropertyName("Material")]
-        public List<MaterialData> Materials { get; set; }
+        public ObservableCollection<MaterialData> Materials { get; set; }
 
         public Model3dData()
         {
-            Meshes = new List<MeshData>();
-            Materials = new List<MaterialData>();
+            Meshes = new ObservableCollection<MeshData>();
+            Materials = new ObservableCollection<MaterialData>();
         }
 
         public bool ParseJsonElement(JsonElement element)

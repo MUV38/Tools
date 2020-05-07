@@ -4,7 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ModelEditor.Main.Views"
+        xmlns:ctrl="clr-namespace:ModelEditor.Main.Controls"
         xmlns:of ="clr-namespace:ModelEditor.Dialog.OpenFile"
+        xmlns:mdl3d="clr-namespace:ModelEditor.Model3d"
         mc:Ignorable="d"
         Title="ModelEditor" 
         Width="1280"
@@ -67,27 +69,11 @@
                 </Grid.ColumnDefinitions>
 
                 <!--左ウィンドウ-->
-                <TabControl Grid.Row="0" Grid.Column="0">
-                    <!--Mesh-->
-                    <TabItem Header="Mesh">
-                        <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible">
-                            <StackPanel>
-                                <TextBlock Text="test"/>
-                            </StackPanel>
-                        </ScrollViewer>
-                    </TabItem>
-                    <!--Material-->
-                    <TabItem Header="Material">
-                        <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible">
-                            <StackPanel>
-                                <TextBlock Text="test"/>
-                            </StackPanel>
-                        </ScrollViewer>
-                    </TabItem>
-                </TabControl>
+                <ctrl:ModelViewControl Grid.Row="0" Grid.Column="0"/>
 
                 <GridSplitter Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch"/>
 
+                <!--#region 中央ウィンドウ-->
                 <Grid Grid.Row="0" Grid.Column="2">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="100*"/>
@@ -101,40 +87,16 @@
                     <GridSplitter Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"/>
 
                     <!--中央下ウィンドウ-->
-                    <TabControl Grid.Row="2" Grid.Column="0">
-                        <!--Log-->
-                        <TabItem Header="Log">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="3*"/>
-                                    <RowDefinition Height="1*"/>
-                                    <RowDefinition Height="20*"/>
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="2*"/>
-                                    <ColumnDefinition Width="2*"/>
-                                    <ColumnDefinition Width="1*"/>
-                                </Grid.ColumnDefinitions>
-
-                                <ComboBox Grid.Row="0" Grid.Column="3"/>
-                                <Separator Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" MinHeight="5"/>
-                                <ScrollViewer Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible">
-                                    <TextBlock Text="test"/>
-                                </ScrollViewer>
-                            </Grid>
-                        </TabItem>
-                    </TabControl>
+                    <ctrl:InfoViewControl Grid.Row="2" Grid.Column="0"/>
                 </Grid>
 
                 <GridSplitter Grid.Row="0" Grid.Column="3" Width="5" HorizontalAlignment="Stretch"/>
 
                 <!--右ウィンドウ-->
-                <ScrollViewer Grid.Row="0" Grid.Column="4" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible">
-                    <ListView>
-                    </ListView>
-                </ScrollViewer>
+                <ctrl:PropertyViewControl Grid.Row="0" Grid.Column="4"/>
             </Grid>
-
+            <!--#endregion-->
+            
             <!--ステータスバー-->
             <StatusBar Grid.Row="2" Grid.Column="0" DockPanel.Dock="Top">
                 <StatusBarItem Content="準備完了"/>
