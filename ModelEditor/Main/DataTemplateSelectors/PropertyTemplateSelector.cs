@@ -8,7 +8,7 @@ using System.Windows.Controls;
 
 namespace ModelEditor.Main.DataTemplateSelectors
 {
-    class ModelViewTemplateSelector : DataTemplateSelector
+    class PropertyTemplateSelector : DataTemplateSelector
     {
         /// <summary>
         /// 空表示用テンプレート

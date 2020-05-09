@@ -29,7 +29,7 @@
     </UserControl.Resources>
 
     <ContentControl.ContentTemplateSelector>
-        <dts:ModelViewTemplateSelector
+        <dts:PropertyTemplateSelector
             EmptyTemplate="{StaticResource EmptyTemplate}"
             MeshTemplate="{StaticResource MeshTemplate}"
             MaterialTemplate="{StaticResource MaterialTemplate}"

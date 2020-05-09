@@ -41,6 +41,7 @@
                           of:OpenFileDialogBehavior.Callback="{Binding OpenFileDialogCallback}"
                           />
                     <MenuItem Header="インポート"
+                              InputGestureText="Ctrl+I"
                           Command="{Binding ImportFileDialog}"
                           of:OpenFileDialogBehavior.Title="ファイルをインポート"
                           of:OpenFileDialogBehavior.Filter="モデルファイル(*.json)|*.json"

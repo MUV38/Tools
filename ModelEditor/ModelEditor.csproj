@@ -112,7 +112,7 @@
     <Compile Include="Main\Controls\PropertyViewControl.xaml.cs">
       <DependentUpon>PropertyViewControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Main\DataTemplateSelectors\ModelViewTemplateSelector.cs" />
+    <Compile Include="Main\DataTemplateSelectors\PropertyTemplateSelector.cs" />
     <Compile Include="Main\ViewModels\MenuViewModel.cs" />
     <Compile Include="Main\ViewModels\ModelViewModel.cs" />
     <Compile Include="Main\ViewModels\PropertyViewModel.cs" />
