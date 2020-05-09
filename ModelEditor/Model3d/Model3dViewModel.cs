@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.Collections.ObjectModel;
 using ModelEditor.ViewModel;
 
 namespace ModelEditor.Model3d
@@ -24,11 +24,11 @@ namespace ModelEditor.Model3d
         }
         public ObservableCollection<MeshData> MeshDatas
         {
-            get { return ModelData != null ? ModelData.Meshes : null; }
+            get { return ModelData?.Meshes; }
         }
         public ObservableCollection<MaterialData> MaterialDatas
         {
-            get { return ModelData != null ? ModelData.Materials : null; }
+            get { return ModelData?.Materials; }
         }
         private void RaisePropertyChangedModel()
         {
@@ -46,7 +46,10 @@ namespace ModelEditor.Model3d
         public bool Import(string fileName)
         {
             bool result = _model.Import(fileName);
-            RaisePropertyChangedModel();
+            if (result)
+            {
+                RaisePropertyChangedModel();
+            }
 
             return result;
         }

@@ -6,12 +6,16 @@
              xmlns:local="clr-namespace:ModelEditor.Main.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="450">
+    
     <!--左ウィンドウ-->
     <TabControl>
         <!--Mesh-->
         <TabItem Header="Mesh">
             <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible">
-                <ListBox ItemsSource="{Binding MeshDatas, UpdateSourceTrigger=PropertyChanged}" DataContext="{Binding Model3dViewModel}">
+                <ListBox x:Name="ListBoxMesh" 
+                         ItemsSource="{Binding MeshDatas, UpdateSourceTrigger=PropertyChanged}" 
+                         SelectionChanged="ListBoxMesh_SelectionChanged"
+                         >
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>
@@ -25,7 +29,10 @@
         <!--Material-->
         <TabItem Header="Material">
             <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible">
-                <ListBox ItemsSource="{Binding MaterialDatas, UpdateSourceTrigger=PropertyChanged}" DataContext="{Binding Model3dViewModel}">
+                <ListBox x:Name="ListBoxMaterial" 
+                         ItemsSource="{Binding MaterialDatas, UpdateSourceTrigger=PropertyChanged}" 
+                         SelectionChanged="ListBoxMaterial_SelectionChanged"
+                         >
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>

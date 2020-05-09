@@ -112,9 +112,14 @@
     <Compile Include="Main\Controls\PropertyViewControl.xaml.cs">
       <DependentUpon>PropertyViewControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Main\DataTemplateSelectors\ModelViewTemplateSelector.cs" />
+    <Compile Include="Main\ViewModels\MenuViewModel.cs" />
+    <Compile Include="Main\ViewModels\ModelViewModel.cs" />
+    <Compile Include="Main\ViewModels\PropertyViewModel.cs" />
     <Compile Include="Model3d\Model3dData.cs" />
     <Compile Include="Model3d\Model3d.cs" />
     <Compile Include="Model3d\Model3dViewModel.cs" />
+    <Compile Include="ViewModel\CommonViewModel.cs" />
     <Compile Include="ViewModel\PropertyObject.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -179,5 +184,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

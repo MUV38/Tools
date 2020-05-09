@@ -4,11 +4,35 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ModelEditor.Main.Controls"
+             xmlns:dts="clr-namespace:ModelEditor.Main.DataTemplateSelectors"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    
-    <ScrollViewer Grid.Row="0" Grid.Column="4" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible">
-        <ListView>
-        </ListView>
-    </ScrollViewer>
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="EmptyTemplate">
+                <ScrollViewer Grid.Row="0" Grid.Column="4" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible">
+                    <StackPanel>
+                        <TextBlock Text="hogehoge"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </DataTemplate>
+            <DataTemplate x:Key="MeshTemplate">
+                <ScrollViewer Grid.Row="0" Grid.Column="4" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible">
+                </ScrollViewer>
+            </DataTemplate>
+            <DataTemplate x:Key="MaterialTemplate">
+                <ScrollViewer Grid.Row="0" Grid.Column="4" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible">
+                </ScrollViewer>
+            </DataTemplate>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <ContentControl.ContentTemplateSelector>
+        <dts:ModelViewTemplateSelector
+            EmptyTemplate="{StaticResource EmptyTemplate}"
+            MeshTemplate="{StaticResource MeshTemplate}"
+            MaterialTemplate="{StaticResource MaterialTemplate}"
+            />
+    </ContentControl.ContentTemplateSelector>
 </UserControl>

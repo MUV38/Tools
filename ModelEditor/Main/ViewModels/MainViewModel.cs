@@ -16,75 +16,46 @@ namespace ModelEditor.Main.ViewModels
     /// </summary>
     class MainViewModel : PropertyObject
     {
-        #region ファイルを開く
-        private CommandObject _openFileDialog;
-        public CommandObject OpenFileDialog
+        public MainViewModel()
         {
-            get
-            {
-                return _openFileDialog ?? (_openFileDialog = new CommandObject(
-                    _ =>
-                    {
-                        OpenFileDialogCallback = OnOpenFileDialog;
-                    }));
-            }
+            _commonViewModel = new CommonViewModel();
+            _menuViewModel = new MenuViewModel(CommonViewModel);
+            _modelViewModel = new ModelViewModel(CommonViewModel);
+            _propertyViewModel = new PropertyViewModel(CommonViewModel);
         }
 
-        private Action<bool, string> _openFileDialogCallback;
-        public Action<bool, string> OpenFileDialogCallback
+        #region ビューモデル
+        /// <summary>
+        /// 共通のビューモデル
+        /// </summary>
+        private CommonViewModel _commonViewModel;
+        public CommonViewModel CommonViewModel
         {
-            get { return _openFileDialogCallback; }
-            set { SetProperty(ref _openFileDialogCallback, value); }
+            get { return _commonViewModel; }
         }
         /// <summary>
-        /// ファイルオープンダイアログのイベント
+        /// メニュービューモデル
         /// </summary>
-        /// <param name="result">オープン成功か</param>
-        /// <param name="filename">ファイル名</param>
-        private void OnOpenFileDialog(bool result, string filename)
+        private MenuViewModel _menuViewModel;
+        public MenuViewModel MenuViewModel
         {
-            OpenFileDialogCallback = null;
-            System.Diagnostics.Debug.WriteLine("result:{0} filename:{1}", result, filename);
+            get { return _menuViewModel; }
         }
-        #endregion
-
-        #region ファイルをインポート
-        private CommandObject _importFileDialog;
-        public CommandObject ImportFileDialog
+        /// <summary>
+        /// モデルビューのビューモデル
+        /// </summary>
+        private ModelViewModel _modelViewModel;
+        public ModelViewModel ModelViewModel
         {
-            get
-            {
-                return _importFileDialog ?? (_importFileDialog = new CommandObject(
-                    _ =>
-                    {
-                        ImportFileDialogCallback = OnImportFileDialog;
-                    }));
-            }
+            get { return _modelViewModel; }
         }
-
-        private Action<bool, string> _importFileDialogCallback;
-        public Action<bool, string> ImportFileDialogCallback
+        /// <summary>
+        /// プロパティのビューモデル
+        /// </summary>
+        private PropertyViewModel _propertyViewModel;
+        public PropertyViewModel PropertyViewModel
         {
-            get { return _importFileDialogCallback; }
-            set { SetProperty(ref _importFileDialogCallback, value); }
-        }
-        private void OnImportFileDialog(bool result, string filename)
-        {
-            ImportFileDialogCallback = null;
-            System.Diagnostics.Debug.WriteLine("result:{0} filename:{1}", result, filename);
-
-            if (result)
-            {
-                _modelVm.Import(filename);
-            }
-        }
-        #endregion
-
-        #region モデル
-        private Model3dViewModel _modelVm = new Model3dViewModel();
-        public Model3dViewModel Model3dViewModel
-        {
-            get { return _modelVm; }
+            get { return _propertyViewModel; }
         }
         #endregion
     }

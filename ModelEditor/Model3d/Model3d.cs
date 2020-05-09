@@ -50,13 +50,13 @@ namespace ModelEditor.Model3d
                     }
 
                     // モデルデータ構築
-                    _modelData = new Model3dData();
-                    bool result = _modelData.ParseJsonElement(document.RootElement);
+                    var modelData = new Model3dData();
+                    bool result = modelData.ParseJsonElement(document.RootElement);
                     if (!result)
                     {
-                        _modelData = null;
                         throw new Exception("Failed parse json element.");
                     }
+                    _modelData = modelData;
                 }
             }
             catch (Exception e)

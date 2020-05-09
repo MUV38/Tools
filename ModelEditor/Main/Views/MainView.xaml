@@ -14,8 +14,8 @@
         >
 
     <Window.InputBindings>
-        <KeyBinding Modifiers="Control" Key="O" Command="{Binding OpenFileDialog}"/>
-        <KeyBinding Modifiers="Control" Key="I" Command="{Binding ImportFileDialog}"/>
+        <KeyBinding Modifiers="Control" Key="O" Command="{Binding MenuViewModel.OpenFileDialog}"/>
+        <KeyBinding Modifiers="Control" Key="I" Command="{Binding MenuViewModel.ImportFileDialog}"/>
     </Window.InputBindings>
     
     <DockPanel>
@@ -30,7 +30,7 @@
             </Grid.ColumnDefinitions>
 
             <!--メニュー-->
-            <Menu Grid.Row="0" Grid.Column="0" DockPanel.Dock="Top">
+            <Menu Grid.Row="0" Grid.Column="0" DockPanel.Dock="Top" DataContext="{Binding MenuViewModel}">
                 <MenuItem Header="ファイル(_F)" Command="{Binding OpenFileDialog}">
                     <MenuItem Header="開く(_O)"
                           InputGestureText="Ctrl+O"
@@ -69,7 +69,7 @@
                 </Grid.ColumnDefinitions>
 
                 <!--左ウィンドウ-->
-                <ctrl:ModelViewControl Grid.Row="0" Grid.Column="0"/>
+                <ctrl:ModelViewControl Grid.Row="0" Grid.Column="0" DataContext="{Binding ModelViewModel}"/>
 
                 <GridSplitter Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch"/>
 
@@ -93,7 +93,7 @@
                 <GridSplitter Grid.Row="0" Grid.Column="3" Width="5" HorizontalAlignment="Stretch"/>
 
                 <!--右ウィンドウ-->
-                <ctrl:PropertyViewControl Grid.Row="0" Grid.Column="4"/>
+                <ctrl:PropertyViewControl Grid.Row="0" Grid.Column="4" DataContext="{Binding PropertyViewModel}"/>
             </Grid>
             <!--#endregion-->
             

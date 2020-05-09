@@ -6,9 +6,30 @@
         xmlns:local="clr-namespace:WPFSandbox.Views"
         mc:Ignorable="d"
         Title="mainView" Height="300" Width="300">
-    <StackPanel>
-        <TextBox Text="{Binding InputString, UpdateSourceTrigger=PropertyChanged}"/>
-        <TextBlock Text="{Binding UpperString}"/>
-        <Button Content="Clear" Command="{Binding ClearCommand}"/>
-    </StackPanel>
+    <TabControl>
+        <TabItem Header="UpperString">
+            <StackPanel>
+                <TextBox Text="{Binding InputString, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBlock Text="{Binding UpperString}"/>
+                <Button Content="Clear" Command="{Binding ClearCommand}"/>
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="TreeView">
+            <StackPanel>
+                <Button Content="Add" Command="{Binding AddCommand}"/>
+                <ListBox ItemsSource="{Binding TreeViewList, UpdateSourceTrigger=PropertyChanged}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Content="X" Command="{Binding DataContext.DeleteCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBox}}}" CommandParameter="{Binding .}" Margin="5"/>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Name}"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+        </TabItem>
+    </TabControl>
 </Window>
