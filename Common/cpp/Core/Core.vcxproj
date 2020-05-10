@@ -58,7 +58,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PreprocessToFile>false</PreprocessToFile>
-      <AdditionalIncludeDirectories>include\core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -79,7 +79,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PreprocessToFile>false</PreprocessToFile>
-      <AdditionalIncludeDirectories>include\core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -97,6 +97,7 @@
     <ClInclude Include="include\core\core.h" />
     <ClInclude Include="include\core\filesystem\myFilesystem.h" />
     <ClInclude Include="include\core\string\stringUtil.h" />
+    <ClInclude Include="include\core\timer\timer.h" />
     <ClInclude Include="include\core\windows\myWindows.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
@@ -107,6 +108,7 @@
     </ClCompile>
     <ClCompile Include="source\filesystem\myFilesystem.cpp" />
     <ClCompile Include="source\string\stringUtil.cpp" />
+    <ClCompile Include="source\timer\timer.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

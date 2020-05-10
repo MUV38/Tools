@@ -1,7 +1,7 @@
 ﻿#include "pch.h"
-#include "string/stringUtil.h"
+#include "core/string/stringUtil.h"
 
-#include "windows/MyWindows.h"
+#include "core/windows/MyWindows.h"
 
 // string to wstring
 std::wstring util::ToWstring(const std::string& str)

@@ -27,6 +27,12 @@
     <Filter Include="include\windows">
       <UniqueIdentifier>{8e5dff81-d1c4-45cf-9895-67e608a77031}</UniqueIdentifier>
     </Filter>
+    <Filter Include="include\timer">
+      <UniqueIdentifier>{54ef5fa2-c1f8-4d68-99f6-410e62e3d76f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\timer">
+      <UniqueIdentifier>{ddd2de35-faa1-4a5a-9fab-bab74c573fed}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -50,6 +56,9 @@
     <ClInclude Include="include\core\assert\assert.h">
       <Filter>include\assert</Filter>
     </ClInclude>
+    <ClInclude Include="include\core\timer\timer.h">
+      <Filter>include\timer</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -60,6 +69,9 @@
     </ClCompile>
     <ClCompile Include="source\string\stringUtil.cpp">
       <Filter>source\string</Filter>
+    </ClCompile>
+    <ClCompile Include="source\timer\timer.cpp">
+      <Filter>source\timer</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
